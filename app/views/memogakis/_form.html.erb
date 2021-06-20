@@ -1,0 +1,24 @@
+<%= form_with(model: memogaki, local: true) do |form| %>
+      <div class="memo_head">
+      <%= form.text_field :title, placeholder: "タイトル" ,class: "memo_title"  %>
+      <%= form.text_field :year, placeholder: "年" %>
+      <%= form.text_field :month, placeholder: "月" %>
+      <%= form.text_field :day, placeholder: "日" %>
+      <br><br>
+      </div>
+
+      <div class="memo_text">
+      <%= form.text_area :text, placeholder: "内容", rows: "2" ,class: "memo_width"  %>
+      <br><br>
+      <%= form.text_area :text_two, placeholder: "内容2", rows: "2" ,class: "memo_width" %>
+      <br><br>
+      <%= form.text_area :text_three, placeholder: "内容3", rows: "2" ,class: "memo_width" %>
+      <br><br>
+      <%= form.text_area :text_four, placeholder: "内容4", rows: "2" ,class: "memo_width" %>
+      <br><br>
+      <%= form.text_area :text_five, placeholder: "内容5", rows: "2" ,class: "memo_width" %>
+      <br><br>
+      <%= form.text_area :text_six, placeholder: "内容6", rows: "2" ,class: "memo_width" %>
+      <%= form.submit "メモを終了" %>
+      </div>
+    <% end %>

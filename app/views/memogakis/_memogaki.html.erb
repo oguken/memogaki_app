@@ -1,0 +1,28 @@
+      <p><%#= memogaki.title %></p>
+      <b><%= memogaki.year %>年</b>
+      <b><%= memogaki.month %>月</b>
+      <b><%= memogaki.day %>日</b>
+      <p><%#= memogaki.text %></p>
+      <p><%#= memogaki.text_two %></p>
+      <p><%#= memogaki.text_three %></p>
+      <p><%#= memogaki.text_four %></p>
+      <p><%#= memogaki.text_five %></p>
+      <p><%#= memogaki.text_six %></p>
+
+      
+      <div class="more">
+        <ul class="more_list">
+          <li>
+            <%= link_to 'この時の詳細', memogaki_path(memogaki.id), method: :get %> <%# 詳細部分 %>
+          </li>
+          <% if user_signed_in? && current_user.id == memogaki.user_id %>
+          
+           <%# <li>
+            <%= link_to '編集', edit_memogaki_path(memogaki.id), method: :get %>
+           </li> 
+
+          <li>
+            <%= link_to '削除', memogaki_path(memogaki.id), method: :delete %>
+          </li> 
+          <% end %>
+          </div>

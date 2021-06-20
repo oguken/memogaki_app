@@ -1,0 +1,29 @@
+<div class="contents row">
+ <a class="post" href="/memogakis/new">メモを開始</a> <%#投稿部分%>
+ <h1 class="top">思考</h1>
+ <ul class="user__info">
+        <% if user_signed_in? %>
+          <span><%= current_user.nickname %>
+              <li>
+                <%= link_to "マイページ", "/users/#{current_user.id}" %>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+          </span>
+
+            <%#= link_to "メモを開始", new_memogaki_path, class: "post" %> <%#投稿部分%>
+          </div>
+        <% else %>
+          <div class="grid-6">
+            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+            <%= link_to "ログイン", new_user_session_path, class: "post" %>
+          </div>
+          <% end %>
+<div class="main">
+ <div class="text">
+  <% @memogakis.each do |memogaki| %>
+      <%= render partial: "memogaki", locals: { memogaki: memogaki } %>
+          <% end %>
+        </ul>
+      </div>
+    </div>

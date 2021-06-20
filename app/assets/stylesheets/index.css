@@ -1,0 +1,77 @@
+.top { 
+  background-color: rgb(248, 241, 241);
+  font-size: 35px;
+  text-align:center
+}
+
+.user__info {
+  background-color: rgb(248, 241, 241);
+  color:red;
+  text-align:left
+}
+
+b {
+  color: black;
+  padding: 5px;
+}
+
+.main {
+  background-color: rgb(248, 241, 241);
+  height: 100%;
+  width: 100%;
+}
+
+.text {
+  border: 1px solid rgb(161, 154, 139);
+}
+
+.post{
+  border: red solid 1px;
+  padding: 5px;
+  margin: 0px 0px 100px;
+  text-decoration: none
+}
+
+.memo_head{
+  padding: 10px;
+  margin: 0px 10px;
+}
+
+.memo_text{
+  padding: 10px;
+}
+
+.timer{
+  padding: 0px 70px  5px 0px;
+  text-align:right
+}
+
+.timer_start{
+  text-align:right
+}
+
+.success{
+  font-size: 30px;
+  text-align:center
+}
+
+.head{
+  color:red;
+}
+
+.container{
+  text-align: center;
+  font-size: 20px;
+}
+
+.memo_width{
+  width: 500px;
+}
+
+.memo_title{
+  width: 300px;
+}
+
+.under{
+  text-align: center;
+}

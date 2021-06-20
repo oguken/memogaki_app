@@ -1,0 +1,68 @@
+<div class="show">
+詳しい詳細
+</div>
+
+<div class="contents row">
+    <div class="show_more">
+    
+    <b><%= @memogaki.title %></b>
+    <b><%= @memogaki.year %>年</b>
+    <b><%= @memogaki.month %>月</b>
+    <b><%= @memogaki.day %>日</b>
+    
+    <%#ログインしたユーザーと、現在のユーザーだけ書き換えと、削除が可能 %>
+<% if user_signed_in? && current_user.id == @memogaki.user_id %>
+
+    <p><%= @memogaki.text %></p>
+    <p><%= @memogaki.text_two %></p>
+    <p><%= @memogaki.text_three %></p>
+    <p><%= @memogaki.text_four %></p>
+    <p><%= @memogaki.text_five %></p>
+    <p><%= @memogaki.text_six %></p>
+
+
+    <ul class="more_list">
+        <li>
+          <%= link_to '書き替える', edit_memogaki_path(@memogaki.id), method: :get %> <%# 編集だった部分 %>
+        </li>
+        <li>
+          <%= link_to '削除', memogaki_path(@memogaki.id), method: :delete %>
+        </li>
+      </ul>
+      </div>
+
+<%# コメント欄だった部分 %>
+  <div class="plan_name">
+    <span class="name">
+      <a href="/users/<%= @memogaki.user.id %>">
+        <span>投稿者:_</span><%= @memogaki.user.nickname %>
+      </a>
+    </span>
+  <%# </div> %>
+
+  <div class="container">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@memogaki, @plan], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "実行プラン", rows: "2" %>
+        <%= form.submit "プラン記入終了" %>
+      <% end %>
+    <% else %>
+      <strong><p>※ コメントの投稿には新規登録/ログインが必要です ※</p></strong>
+    <% end %>
+    </strong>
+
+    </div>
+
+    <div class="comments">
+      <h4>＜実行プラン一覧＞</h4>
+      <% @plans.each do |plan| %>
+        <p>
+          <strong><%= link_to plan.user.nickname, "/users/#{plan.user_id}" %>：</strong>
+          <%= plan.text %>
+        </p>
+      <% end %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
