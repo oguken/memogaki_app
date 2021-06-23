@@ -1,6 +1,7 @@
 <%= form_with(model: memogaki, local: true) do |form| %>
       <div class="memo_head">
-      <%= form.text_field :title, placeholder: "タイトル" ,class: "memo_title"  %>
+      <%= form.text_field :title, placeholder: "思考、悩み" ,class: "memo_title"  %>
+      <%#titleカラムの部分%>
       <%= form.text_field :year, placeholder: "年" %>
       <%= form.text_field :month, placeholder: "月" %>
       <%= form.text_field :day, placeholder: "日" %>
