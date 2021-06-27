@@ -53,3 +53,4 @@ production:
   database: memogaki_app_production
   username: memogaki_app
   password: <%= ENV['MEMOGAKI_APP_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
